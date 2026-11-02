@@ -10,5 +10,5 @@ window.SITE_CONFIG = {
 
   // Your WhatsApp number in international format, digits only, no + or spaces.
   // Example: 2348012345678. Leave as '' to turn the WhatsApp step off.
-  +2347048350899: '',
+  WHATSAPP_NUMBER: '2347048350899',
 };
