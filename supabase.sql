@@ -40,9 +40,9 @@ create policy "owner can read inquiries" on inquiries
 
 create policy "owner can update inquiries" on inquiries
   for update to authenticated
-  using ((auth.jwt() ->> 'email') = 'YOUR_ADMIN_EMAIL@example.com')
-  with check ((auth.jwt() ->> 'email') = 'YOUR_ADMIN_EMAIL@example.com');
+  using ((auth.jwt() ->> 'email') = 'oceanmediaglobal@gmail.com')
+  with check ((auth.jwt() ->> 'email') = 'oceanmediaglobal@gmail.com');
 
 create policy "owner can delete inquiries" on inquiries
   for delete to authenticated
-  using ((auth.jwt() ->> 'email') = 'YOUR_ADMIN_EMAIL@example.com');
+  using ((auth.jwt() ->> 'email') = 'oceanmediaglobal@example.com');
