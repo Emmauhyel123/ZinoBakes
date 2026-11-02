@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Zino Bakes · Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fdf6ec;--vanilla:#f7e7c6;--blush:#f4cfc6;--peach:#f2b79c;--espresso:#3b2a24;--serif:"Playfair Display",Georgia,serif;--sans:Nunito,system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--espresso);font-family:var(--sans);line-height:1.5}
+h1,h2{font-family:var(--serif);margin:0}
+.hidden{display:none!important}
+.wrap{max-width:60rem;margin:0 auto;padding:1.25rem}
+.card{background:#fff;border:1px solid var(--vanilla);border-radius:14px;padding:1rem 1.1rem;box-shadow:0 2px 8px rgba(59,42,36,.06)}
+input,select,button{font:inherit;color:inherit}
+input,select{width:100%;padding:.6rem .75rem;border:1px solid var(--blush);border-radius:10px;background:#fff}
+button,.btn{cursor:pointer;border:0;border-radius:999px;padding:.5rem 1rem;font-weight:700;background:var(--espresso);color:var(--cream);text-decoration:none;display:inline-block;font-size:.9rem}
+button.ghost,.btn.ghost{background:var(--vanilla);color:var(--espresso)}
+button.danger{background:#a3392d}
+button:disabled{opacity:.6;cursor:wait}
+/* login */
+#login{max-width:24rem;margin:12vh auto 0}
+#login form{display:grid;gap:.75rem;margin-top:1rem}
+.err{color:#a3392d;font-weight:700;min-height:1.3rem;font-size:.92rem}
+/* top bar */
+.bar{display:flex;gap:.6rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:1rem}
+.tools{display:grid;grid-template-columns:2fr 1fr;gap:.6rem;margin-bottom:.8rem}
+.stats{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.chip{background:var(--vanilla);border-radius:999px;padding:.2rem .8rem;font-weight:700;font-size:.85rem}
+/* list */
+#list{display:grid;gap:.8rem}
+.row-top{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;align-items:baseline}
+.name{font-weight:700;font-size:1.05rem}
+.meta{font-size:.85rem;opacity:.75}
+.msg{white-space:pre-wrap;margin:.6rem 0;background:var(--cream);border-radius:10px;padding:.6rem .75rem}
+.facts{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.4rem}
+.actions{display:flex;gap:.45rem;flex-wrap:wrap;align-items:center}
+.actions select{width:auto;padding:.4rem .6rem;border-radius:999px}
+.badge{border-radius:999px;padding:.1rem .7rem;font-size:.8rem;font-weight:700}
+.b-new{background:var(--peach)} .b-replied{background:#cfe6c8} .b-done{background:#ddd}
+.empty{text-align:center;padding:2rem;opacity:.7}
+@media(max-width:520px){.tools{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login" class="wrap">
+  <div class="card">
+    <h1>Zino Bakes admin</h1>
+    <form id="login-form">
+      <input id="email" type="email" placeholder="Email" autocomplete="username" required>
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button type="submit">Log in</button>
+      <p id="login-err" class="err" role="alert"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="app" class="wrap hidden">
+  <div class="bar">
+    <h1>Enquiries</h1>
+    <div class="actions">
+      <button class="ghost" id="refresh">Refresh</button>
+      <button class="ghost" id="export">Export CSV</button>
+      <button id="logout">Log out</button>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search name, phone, email, details…">
+    <select id="filter">
+      <option value="">All statuses</option>
+      <option value="new">New</option>
+      <option value="replied">Replied</option>
+      <option value="done">Done</option>
+    </select>
+  </div>
+  <p id="app-err" class="err" role="alert"></p>
+  <div id="list"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="../js/config.js"></script>
+<script>
+(function () {
+  const cfg = window.SITE_CONFIG;
+  const db = supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY);
+  const $ = (id) => document.getElementById(id);
+  let rows = [];
+
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  // Nigerian numbers: 0801... -> 234801...
+  function waNumber(p) {
+    let d = String(p || '').replace(/\D/g, '');
+    if (!d) return '';
+    if (d.startsWith('0')) d = '234' + d.slice(1);
+    return d;
+  }
+
+  /* ---------- auth ---------- */
+  async function showApp(session) {
+    $('login').classList.toggle('hidden', !!session);
+    $('app').classList.toggle('hidden', !session);
+    if (session) load();
+  }
+  db.auth.getSession().then(({ data }) => showApp(data.session));
+
+  $('login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $('login-err').textContent = '';
+    const { data, error } = await db.auth.signInWithPassword({
+      email: $('email').value.trim(), password: $('password').value
+    });
+    if (error) { $('login-err').textContent = 'Wrong email or password.'; return; }
+    $('password').value = '';
+    showApp(data.session);
+  });
+  $('logout').addEventListener('click', async () => { await db.auth.signOut(); rows = []; showApp(null); });
+
+  /* ---------- data ---------- */
+  async function load() {
+    $('app-err').textContent = '';
+    const { data, error } = await db.from(cfg.TABLE).select('*').order('created_at', { ascending: false });
+    if (error) { $('app-err').textContent = 'Could not load enquiries: ' + error.message; return; }
+    rows = data; render();
+  }
+
+  function render() {
+    const q = $('search').value.toLowerCase().trim();
+    const f = $('filter').value;
+    const shown = rows.filter(r =>
+      (!f || r.status === f) &&
+      (!q || [r.name, r.email, r.phone, r.type, r.message].join(' ').toLowerCase().includes(q)));
+
+    const count = (s) => rows.filter(r => r.status === s).length;
+    $('stats').innerHTML =
+      `<span class="chip">Total ${rows.length}</span><span class="chip">New ${count('new')}</span>` +
+      `<span class="chip">Replied ${count('replied')}</span><span class="chip">Done ${count('done')}</span>`;
+
+    if (!shown.length) { $('list').innerHTML = '<div class="empty card">No enquiries to show.</div>'; return; }
+
+    $('list').innerHTML = shown.map(r => {
+      const wa = waNumber(r.phone);
+      const when = new Date(r.created_at).toLocaleString('en-NG', { dateStyle: 'medium', timeStyle: 'short' });
+      const hi = encodeURIComponent(`Hello ${r.name}, this is Zino Bakes replying to your ${r.type || 'order'} enquiry.`);
+      return `
+      <article class="card" data-id="${r.id}">
+        <div class="row-top">
+          <span class="name">${esc(r.name)} <span class="badge b-${esc(r.status)}">${esc(r.status)}</span></span>
+          <span class="meta">${esc(when)}</span>
+        </div>
+        <div class="facts">
+          <span class="chip">${esc(r.type || 'No type')}</span>
+          ${r.needed_by ? `<span class="chip">Needed ${esc(r.needed_by)}</span>` : ''}
+          ${r.phone ? `<span class="chip">${esc(r.phone)}</span>` : ''}
+          <span class="chip">${esc(r.email)}</span>
+        </div>
+        <div class="msg">${esc(r.message)}</div>
+        <div class="actions">
+          ${wa ? `<a class="btn" target="_blank" rel="noopener" href="https://wa.me/${wa}?text=${hi}">WhatsApp</a>` : ''}
+          <a class="btn ghost" href="mailto:${esc(r.email)}?subject=${encodeURIComponent('Your Zino Bakes enquiry')}">Email</a>
+          <select data-act="status" aria-label="Status">
+            ${['new','replied','done'].map(s => `<option value="${s}" ${s === r.status ? 'selected' : ''}>${s}</option>`).join('')}
+          </select>
+          <button class="danger" data-act="delete">Delete</button>
+        </div>
+      </article>`;
+    }).join('');
+  }
+
+  $('list').addEventListener('change', async (e) => {
+    if (e.target.dataset.act !== 'status') return;
+    const id = e.target.closest('article').dataset.id;
+    const { error } = await db.from(cfg.TABLE).update({ status: e.target.value }).eq('id', id);
+    if (error) { $('app-err').textContent = 'Update failed: ' + error.message; return; }
+    const r = rows.find(x => String(x.id) === id); r.status = e.target.value; render();
+  });
+
+  $('list').addEventListener('click', async (e) => {
+    if (e.target.dataset.act !== 'delete') return;
+    if (!confirm('Delete this enquiry permanently?')) return;
+    const id = e.target.closest('article').dataset.id;
+    const { error } = await db.from(cfg.TABLE).delete().eq('id', id);
+    if (error) { $('app-err').textContent = 'Delete failed: ' + error.message; return; }
+    rows = rows.filter(x => String(x.id) !== id); render();
+  });
+
+  $('search').addEventListener('input', render);
+  $('filter').addEventListener('change', render);
+  $('refresh').addEventListener('click', load);
+
+  $('export').addEventListener('click', () => {
+    const cols = ['created_at','name','phone','email','type','needed_by','status','message'];
+    const cell = (v) => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+    const csv = [cols.join(',')].concat(rows.map(r => cols.map(c => cell(r[c])).join(','))).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    a.download = 'zinobakes-enquiries.csv'; a.click();
+  });
+})();
+</script>
+</body>
+</html>

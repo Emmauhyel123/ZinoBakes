@@ -201,3 +201,4 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.1; }
   .slider { min-height: 0; display: grid; gap: 1rem; }
   .review { position: static; opacity: 1; animation: none; pointer-events: auto; }
 }
+.form-status a { color: inherit; text-decoration: underline; font-weight: 700; }

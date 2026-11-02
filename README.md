@@ -24,3 +24,7 @@ Never put a secret/service key in `config.js`: anyone can view it in the browser
 ## No-JS features (pure HTML/CSS)
 Carousel (swipe/scroll), product and flyer pop-ups (CSS `:target`), transparent-to-solid navbar
 (CSS scroll animation), testimonial fading, and the video play-icon hover.
+
+## Admin page (protected)
+Open `/admin/` on your site. Log in with the Supabase user you create (see the ADMIN ACCESS block in `supabase.sql`).
+You can search, filter, mark Replied/Done, reply by WhatsApp or email, delete, and export to CSV.
