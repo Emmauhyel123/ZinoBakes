@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ZinoBakes</title>
+  <meta name="description" content="Small-batch cakes and pastries made by hand, plus the stories behind every bake.">
+  <link rel="icon" href="assets/logo/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ 1. NAVIGATION ============ -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a href="#top" class="brand">
+      <img src="assets/logo/logo.jpg" alt="Crumb &amp; Cream logo">
+      <span>ZinoBakes</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="#feed">Feed</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#order">Order</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ 2. HERO ============ -->
+<section id="top" class="hero">
+  <video src="assets/video/hero.mp4" poster="assets/images/hero-poster.jpg" autoplay loop muted playsinline aria-label="Hands shaping and baking dough"></video>
+  <div class="hero-shade"></div>
+  <div class="hero-text">
+    <h1>Baked with Intention<br>served with love</h1>
+    <p>Small-batch cakes and pastries made by hand, plus the stories behind every bake.</p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn btn-peach">View the Menu</a>
+      <a href="#order" class="btn btn-ghost">Request a custom cake</a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#fdf6ec" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg>
+</section>
+
+<!-- ============ 3. MENU CAROUSEL (swipe sideways) ============ -->
+<section id="menu" class="section menu">
+  <div class="container intro">
+    <h2>Fresh from the oven</h2>
+    <p>Swipe through our best sellers. Tap any bake for ingredients and pricing.</p>
+  </div>
+  <ul class="track">
+
+      <!-- PRODUCT 1: edit name, price, text and image here -->
+      <li class="card" id="product-1">
+        <a href="#modal-1" class="card-link" aria-label="Vanilla Bean Layer Cake, $58. View details">
+          <img src="assets/products/product-1.jpg" alt="Vanilla Bean Layer Cake" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Birthday Cakes</h3><span class="price">20K NGN</span></div>
+            <p>Beautifully baked and freshly decorated cakes, perfect for making every celebration extra special.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 2: edit name, price, text and image here -->
+      <li class="card" id="product-2">
+        <a href="#modal-2" class="card-link" aria-label="Almond Croissant, $6. View details">
+          <img src="assets/products/product-2.jpg" alt="Almond Croissant" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Banana Bread</h3><span class="price">700 NGN</span></div>
+            <p>Soft, moist and delicious banana bread with a naturally sweet flavour in every bite.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 3: edit name, price, text and image here -->
+      <li class="card" id="product-3">
+        <a href="#modal-3" class="card-link" aria-label="Peach Blush Tart, $34. View details">
+          <img src="assets/products/product-3.jpg" alt="Peach Blush Tart" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Choco Chip Cookies</h3><span class="price">300 NGN</span></div>
+            <p>Crunchy on the outside, soft on the inside, and loaded with irresistible chocolate chips.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 4: edit name, price, text and image here -->
+      <li class="card" id="product-4">
+        <a href="#modal-4" class="card-link" aria-label="Brown Butter Cookies, $14. View details">
+          <img src="assets/products/product-4.jpg" alt="Brown Butter Cookies" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Spiral Buns</h3><span class="price">300 NGN</span></div>
+            <p>Soft, fluffy and freshly baked spiral buns with a delicious swirl in every bite.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 5: edit name, price, text and image here -->
+      <li class="card" id="product-5">
+        <a href="#modal-5" class="card-link" aria-label="Honey Cardamom Buns, $16. View details">
+          <img src="assets/products/product-5.jpg" alt="Honey Cardamom Buns" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Meat Pie</h3><span class="price">700 NGN</span></div>
+            <p>Golden, flaky pastry filled with a delicious, well-seasoned mixture of minced meat, potatoes and carrots.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 6: edit name, price, text and image here -->
+      <li class="card" id="product-6">
+        <a href="#modal-6" class="card-link" aria-label="Rose Pistachio Cupcakes, $24. View details">
+          <img src="assets/products/product-6.jpg" alt="Rose Pistachio Cupcakes" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Cupcakes</h3><span class="price">1.5K NGN</span></div>
+            <p>Soft, fluffy and moist mini cakes, beautifully decorated with creamy frosting for a delightful treat.</p>
+          </div>
+        </a>
+      </li>
+
+  </ul>
+</section>
+
+<!-- ============ 4. OFFERS / FLYERS (tap to enlarge) ============ -->
+<section id="offers" class="section offers">
+  <div class="container intro">
+    <h2>This month at the bakehouse</h2>
+    <p>Tap a flyer to see it full size.</p>
+  </div>
+  <div class="container flyers">
+    <!-- FLYER 1: swap the image in assets/flyers -->
+    <a href="#flyer-1" class="flyer"><img src="assets/flyers/flyer-1.jpg" alt="Weekend offer flyer" loading="lazy"></a>
+    <!-- FLYER 2 -->
+    <a href="#flyer-2" class="flyer"><img src="assets/flyers/flyer-2.jpg" alt="Custom cake menu flyer" loading="lazy"></a>
+  </div>
+</section>
+
+<!-- ============ 5. SOCIAL FEED (masonry) ============ -->
+<section id="feed" class="feed">
+  <div class="wave-top"><svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#f9e1d9" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg></div>
+  <div class="feed-body">
+    <div class="container">
+      <div class="feed-head">
+        <div class="intro">
+          <h2>From our kitchen feed</h2>
+          <p>Reels, recipes and quiet moments from the bakehouse, updated every week.</p>
+        </div>
+        <a href="https://www.instagram.com/zino_bakes?dlrf=MW4ybmh5eHhidWxyYw==" class="btn btn-dark">Follow Us</a>
+      </div>
+      <div class="masonry">
+
+        <!-- PHOTO TILE: change src and caption -->
+        <figure class="tile r-sq"><img src="assets/images/social-1.jpg" alt="Saturday morning spread" loading="lazy"><figcaption>Saturday morning spread</figcaption></figure>
+
+        <!-- VIDEO TILE: change src (mp4 in assets/video) and caption -->
+        <figure class="tile r-916"><video src="assets/video/reel-1.mp4" poster="assets/video/reel-1.mp4" loop controls playsinline preload="metadata" aria-label="Lamination, folded in 60 seconds"></video><span class="video-caption">Folded in 60 seconds</span></figure>
+
+        <!-- PHOTO TILE: change src and caption -->
+        <figure class="tile r-45"><img src="assets/images/social-2.jpg" alt="Flour-dusted hands" loading="lazy"><figcaption>Flour-dusted hands</figcaption></figure>
+
+        <!-- VIDEO TILE: change src (mp4 in assets/video) and caption -->
+        <figure class="tile r-34"><video src="assets/video/reel-2.mp4" poster="assets/video/reel-2.mp4" loop controls playsinline preload="metadata" aria-label="Piping rosettes"></video><span class="video-caption">Piping rosettes</span></figure>
+
+        <!-- PHOTO TILE: change src and caption -->
+        <figure class="tile r-34"><img src="assets/images/social-3.jpg" alt="Tart in golden light" loading="lazy"><figcaption>Tart in golden light</figcaption></figure>
+
+        <!-- VIDEO TILE: change src (mp4 in assets/video) and caption -->
+        <figure class="tile r-sq"><video src="assets/video/reel-3.mp4" poster="assets/video/reel-3.mp4" loop controls playsinline preload="metadata" aria-label="The first slice"></video><span class="video-caption">The first slice</span></figure>
+
+        <!-- PHOTO TILE: change src and caption -->
+        <figure class="tile r-916"><img src="assets/images/social-4.jpg" alt="Behind the counter" loading="lazy"><figcaption>Behind the counter</figcaption></figure>
+
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#fdf6ec" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg>
+</section>
+
+<!-- ============ 6. TESTIMONIALS (fade automatically) ============ -->
+<section id="reviews" class="section reviews">
+  <div class="container intro center">
+    <h2>Kind words</h2>
+    <p>A few notes from the people we bake for.</p>
+  </div>
+  <div class="container slider">
+
+        <!-- REVIEW 1: edit photo, text and name -->
+        <blockquote class="review">
+          <img src="assets/reviews/review-1.jpg" alt="WhatsApp feedback from a chin chin customer" loading="lazy">
+          <div>
+            <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+            <p>At first I almost doubted it, but I had to take the risk and it was worth it. Since that day I have been craving more.</p>
+            <footer><strong>Chin chin customer</strong></footer>
+          </div>
+        </blockquote>
+
+        <!-- REVIEW 2: edit photo, text and name -->
+        <blockquote class="review">
+          <img src="assets/reviews/review-2.jpg" alt="WhatsApp feedback from a birthday cake customer" loading="lazy">
+          <div>
+            <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+            <p>The cake was so good.</p>
+            <footer><strong>Birthday cake customer</strong></footer>
+          </div>
+        </blockquote>
+
+        <!-- REVIEW 3: edit photo, text and name -->
+        <blockquote class="review">
+          <img src="assets/reviews/review-3.jpg" alt="ZinoBakes chin chin" loading="lazy">
+          <div>
+            <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+            <p>Thanks Zino for always putting in your best to ensure your customers are satisfied.</p>
+            <footer><strong>Chin chin customer</strong></footer>
+          </div>
+        </blockquote>
+
+  </div>
+</section>
+
+<!-- ============ 7. ORDER INQUIRY ============ -->
+<section id="order" class="order">
+  <div class="wave-top"><svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#f7e7c6" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg></div>
+  <div class="order-body">
+    <div class="container order-grid">
+      <div class="intro">
+        <h2>Start an order</h2>
+        <p>Tell us about your celebration, or a brand collaboration. We reply within two working days.</p>
+      </div>
+      <!-- Sent to your database by js/db.js. Keep the name="" attributes as they are. -->
+      <form id="inquiry-form" class="form" novalidate>
+        <label>Your name<input name="name" required placeholder="Ada Bello" autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required placeholder="you@example.com" autocomplete="email"></label>
+        <label>WhatsApp / phone<input name="phone" type="tel" placeholder="0801 234 5678" autocomplete="tel"></label>
+        <label>What do you need?
+          <select name="type">
+            <option>Custom cake</option><option>Pastry box</option><option>Event catering</option><option>Content collaboration</option>
+          </select>
+        </label>
+        <label>Date needed<input name="needed_by" type="date"></label>
+        <label class="wide">Details<textarea name="message" rows="5" required placeholder="Flavours, servings, colours, inspiration..."></textarea></label>
+        <button type="submit" class="btn btn-dark wide">Send inquiry</button>
+        <p id="form-status" class="form-status wide" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 8. FOOTER ============ -->
+<footer class="footer">
+  <div class="wave-top"><svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#3b2a24" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg></div>
+  <!-- Footer background pattern: change the file in assets/patterns -->
+  <div class="footer-pattern" style="background-image:url('assets/patterns/pattern.svg')" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <img src="assets/logo/logo.jpg" alt="Crumb &amp; Cream logo" class="footer-logo">
+    <p class="footer-line">Come by for something warm.</p>
+    <p class="footer-sub">Open All Days until sold out.</p>
+    <ul class="socials">
+      <!-- Replace each href with your profile link -->
+      <li><a href="https://www.instagram.com/zino_bakes?dlrf=MW4ybmh5eHhidWxyYw==" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3"/></svg></a></li>
+      <li><a href="https://www.tiktok.com/@zinobakes?_r=1&_t=ZS-9B4LG4REAlz" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2 4.2 5 4.4"/></svg></a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=61594861042421" aria-label="Facebook"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5v-2.5z"/></svg></a></li>
+    </ul>
+    <small>&copy; 2026 ZinoBakes</small>
+  </div>
+</footer>
+
+<!-- ============ POP-UPS (product details) ============ -->
+
+  <!-- POP-UP 1: opens when the card above is tapped. Keep id="modal-1" matching the card link. -->
+  <div class="modal" id="modal-1" role="dialog" aria-label="Birthday Cake">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-1.jpg" alt="Birthday Cake">
+      <div class="modal-text">
+        <p class="tag">Celebration Favourite</p>
+        <div class="card-title"><h3>Birthday Cake</h3><span class="price">₦20,000</span></div>
+        <p>Beautifully baked cake with soft, fluffy layers and delicious creamy frosting, specially decorated to make every celebration unforgettable.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Premium flour</li><li>Fresh eggs</li><li>Butter</li><li>Whipped cream</li><li>Cake flavouring</li></ul>
+        <p class="small">Serves 8–12 people</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 2: opens when the card above is tapped. Keep id="modal-2" matching the card link. -->
+  <div class="modal" id="modal-2" role="dialog" aria-label="Banana Bread">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-2.jpg" alt="Banana Bread">
+      <div class="modal-text">
+        <p class="tag">Customer Favourite</p>
+        <div class="card-title"><h3>Banana Bread</h3><span class="price">₦700</span></div>
+        <p>Soft, moist and freshly baked banana bread with a naturally sweet banana flavour that makes every bite irresistible.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Ripe bananas</li><li>Premium flour</li><li>Fresh eggs</li><li>Butter</li><li>Sugar</li></ul>
+        <p class="small">Serves 1–2 people</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 3: opens when the card above is tapped. Keep id="modal-3" matching the card link. -->
+  <div class="modal" id="modal-3" role="dialog" aria-label="Choco Chip Cookies">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-3.jpg" alt="Choco Chip Cookies">
+      <div class="modal-text">
+        <div class="card-title"><h3>Choco Chip Cookies</h3><span class="price">₦300</span></div>
+        <p>Delicious golden cookies with a crunchy exterior, soft centre and generous chocolate chips in every bite.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Chocolate chips</li><li>Premium flour</li><li>Butter</li><li>Fresh eggs</li><li>Sugar</li></ul>
+        <p class="small">Serves 1 person per cookie</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 4: opens when the card above is tapped. Keep id="modal-4" matching the card link. -->
+  <div class="modal" id="modal-4" role="dialog" aria-label="Spiral Buns">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-4.jpg" alt="Spiral Buns">
+      <div class="modal-text">
+        <div class="card-title"><h3>Spiral Buns</h3><span class="price">₦300</span></div>
+        <p>Soft, fluffy and freshly baked spiral buns with a beautiful swirl and a deliciously sweet filling.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Premium flour</li><li>Butter</li><li>Fresh eggs</li><li>Sugar</li><li>Cinnamon filling</li></ul>
+        <p class="small">Serves 1 person per bun</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 5: opens when the card above is tapped. Keep id="modal-5" matching the card link. -->
+  <div class="modal" id="modal-5" role="dialog" aria-label="Meat Pie">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-5.jpg" alt="Meat Pie">
+      <div class="modal-text">
+        <div class="card-title"><h3>Meat Pie</h3><span class="price">₦1,000</span></div>
+        <p>Golden, flaky and buttery pastry filled with a rich, well-seasoned mixture of minced meat, potatoes and carrots.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Minced meat</li><li>Premium flour</li><li>Potatoes</li><li>Fresh carrots</li><li>Butter and spices</li></ul>
+        <p class="small">Serves 1 person per pie</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 6: opens when the card above is tapped. Keep id="modal-6" matching the card link. -->
+  <div class="modal" id="modal-6" role="dialog" aria-label="Cupcakes">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-6.jpg" alt="Cupcakes">
+      <div class="modal-text">
+        <div class="card-title"><h3>Cupcakes</h3><span class="price">₦1,500</span></div>
+        <p>Soft, fluffy and moist mini cakes topped with smooth, creamy frosting, making them the perfect little treat for every occasion.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Premium flour</li><li>Fresh eggs</li><li>Butter</li><li>Sugar</li><li>Creamy frosting</li></ul>
+        <p class="small">Serves 1 person per cupcake</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+<!-- ============ POP-UPS (flyers) ============ -->
+<div class="modal" id="flyer-1" role="dialog" aria-label="Weekend offer flyer">
+  <a href="#offers" class="modal-veil" aria-label="Close"></a>
+  <div class="flyer-view"><a href="#offers" class="modal-close" aria-label="Close">&times;</a><img src="assets/flyers/flyer-1.jpg" alt="Weekend offer flyer"></div>
+</div>
+<div class="modal" id="flyer-2" role="dialog" aria-label="Custom cake menu flyer">
+  <a href="#offers" class="modal-veil" aria-label="Close"></a>
+  <div class="flyer-view"><a href="#offers" class="modal-close" aria-label="Close">&times;</a><img src="assets/flyers/flyer-2.jpg" alt="Custom cake menu flyer"></div>
+</div>
+
+<!-- JavaScript is only used for the database and API key -->
+<script src="js/config.js"></script>
+<script src="js/db.js"></script>
+</body>
+</html>
