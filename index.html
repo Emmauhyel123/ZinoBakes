@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Crumb &amp; Cream Bakehouse</title>
+  <meta name="description" content="Small-batch cakes and pastries made by hand, plus the stories behind every bake.">
+  <link rel="icon" href="assets/logo/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ 1. NAVIGATION ============ -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a href="#top" class="brand">
+      <img src="assets/logo/logo.svg" alt="Crumb &amp; Cream logo">
+      <span>Crumb &amp; Cream</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="#feed">Feed</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#order">Order</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ 2. HERO ============ -->
+<section id="top" class="hero">
+  <video src="assets/video/hero.mp4" poster="assets/images/hero-poster.svg" autoplay loop muted playsinline aria-label="Hands shaping and baking dough"></video>
+  <div class="hero-shade"></div>
+  <div class="hero-text">
+    <h1>Baked slowly,<br>shared warmly.</h1>
+    <p>Small-batch cakes and pastries made by hand, plus the stories behind every bake.</p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn btn-peach">View the Menu</a>
+      <a href="#order" class="btn btn-ghost">Request a custom cake</a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#fdf6ec" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg>
+</section>
+
+<!-- ============ 3. MENU CAROUSEL (swipe sideways) ============ -->
+<section id="menu" class="section menu">
+  <div class="container intro">
+    <h2>Fresh from the oven</h2>
+    <p>Swipe through our best sellers. Tap any bake for ingredients and pricing.</p>
+  </div>
+  <ul class="track">
+
+      <!-- PRODUCT 1: edit name, price, text and image here -->
+      <li class="card" id="product-1">
+        <a href="#modal-1" class="card-link" aria-label="Vanilla Bean Layer Cake, $58. View details">
+          <img src="assets/products/product-1.svg" alt="Vanilla Bean Layer Cake" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Vanilla Bean Layer Cake</h3><span class="price">$58</span></div>
+            <p>Three tender vanilla layers, whipped mascarpone and a crown of fresh berries.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 2: edit name, price, text and image here -->
+      <li class="card" id="product-2">
+        <a href="#modal-2" class="card-link" aria-label="Almond Croissant, $6. View details">
+          <img src="assets/products/product-2.svg" alt="Almond Croissant" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Almond Croissant</h3><span class="price">$6</span></div>
+            <p>Twice-baked, filled with frangipane and dusted with toasted almond flakes.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 3: edit name, price, text and image here -->
+      <li class="card" id="product-3">
+        <a href="#modal-3" class="card-link" aria-label="Peach Blush Tart, $34. View details">
+          <img src="assets/products/product-3.svg" alt="Peach Blush Tart" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Peach Blush Tart</h3><span class="price">$34</span></div>
+            <p>Buttery shortcrust, vanilla custard and glazed peach slices in a petal pattern.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 4: edit name, price, text and image here -->
+      <li class="card" id="product-4">
+        <a href="#modal-4" class="card-link" aria-label="Brown Butter Cookies, $14. View details">
+          <img src="assets/products/product-4.svg" alt="Brown Butter Cookies" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Brown Butter Cookies</h3><span class="price">$14</span></div>
+            <p>Crisp edges, soft centres and a flake of sea salt on each one.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 5: edit name, price, text and image here -->
+      <li class="card" id="product-5">
+        <a href="#modal-5" class="card-link" aria-label="Honey Cardamom Buns, $16. View details">
+          <img src="assets/products/product-5.svg" alt="Honey Cardamom Buns" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Honey Cardamom Buns</h3><span class="price">$16</span></div>
+            <p>Soft knotted buns brushed with cardamom honey and pearl sugar.</p>
+          </div>
+        </a>
+      </li>
+
+      <!-- PRODUCT 6: edit name, price, text and image here -->
+      <li class="card" id="product-6">
+        <a href="#modal-6" class="card-link" aria-label="Rose Pistachio Cupcakes, $24. View details">
+          <img src="assets/products/product-6.svg" alt="Rose Pistachio Cupcakes" loading="lazy">
+          <div class="card-body">
+            <div class="card-title"><h3>Rose Pistachio Cupcakes</h3><span class="price">$24</span></div>
+            <p>Rose-scented sponge, pistachio buttercream and a sugared petal.</p>
+          </div>
+        </a>
+      </li>
+
+  </ul>
+</section>
+
+<!-- ============ 4. OFFERS / FLYERS (tap to enlarge) ============ -->
+<section id="offers" class="section offers">
+  <div class="container intro">
+    <h2>This month at the bakehouse</h2>
+    <p>Tap a flyer to see it full size.</p>
+  </div>
+  <div class="container flyers">
+    <!-- FLYER 1: swap the image in assets/flyers -->
+    <a href="#flyer-1" class="flyer"><img src="assets/flyers/flyer-1.svg" alt="Weekend offer flyer" loading="lazy"></a>
+    <!-- FLYER 2 -->
+    <a href="#flyer-2" class="flyer"><img src="assets/flyers/flyer-2.svg" alt="Custom cake menu flyer" loading="lazy"></a>
+  </div>
+</section>
+
+<!-- ============ 5. SOCIAL FEED (masonry) ============ -->
+<section id="feed" class="feed">
+  <div class="wave-top"><svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#f9e1d9" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg></div>
+  <div class="feed-body">
+    <div class="container">
+      <div class="feed-head">
+        <div class="intro">
+          <h2>From our kitchen feed</h2>
+          <p>Reels, recipes and quiet moments from the bakehouse, updated every week.</p>
+        </div>
+        <a href="https://instagram.com/" class="btn btn-dark">Follow along</a>
+      </div>
+      <div class="masonry">
+
+        <!-- PHOTO TILE: change src and caption -->
+        <figure class="tile r-sq"><img src="assets/images/social-1.svg" alt="Saturday morning spread" loading="lazy"><figcaption>Saturday morning spread</figcaption></figure>
+
+        <!-- VIDEO TILE: change src (mp4 in assets/video) and caption -->
+        <figure class="tile r-916"><video src="assets/video/reel-1.mp4" poster="assets/images/reel-poster.svg" loop controls playsinline preload="metadata" aria-label="Lamination, folded in 60 seconds"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span><figcaption>Lamination, folded in 60 seconds</figcaption></figure>
+
+        <!-- PHOTO TILE: change src and caption -->
+        <figure class="tile r-45"><img src="assets/images/social-2.svg" alt="Flour-dusted hands" loading="lazy"><figcaption>Flour-dusted hands</figcaption></figure>
+
+        <!-- VIDEO TILE: change src (mp4 in assets/video) and caption -->
+        <figure class="tile r-34"><video src="assets/video/reel-2.mp4" poster="assets/images/reel-poster.svg" loop controls playsinline preload="metadata" aria-label="Piping rosettes"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span><figcaption>Piping rosettes</figcaption></figure>
+
+        <!-- PHOTO TILE: change src and caption -->
+        <figure class="tile r-34"><img src="assets/images/social-3.svg" alt="Tart in golden light" loading="lazy"><figcaption>Tart in golden light</figcaption></figure>
+
+        <!-- VIDEO TILE: change src (mp4 in assets/video) and caption -->
+        <figure class="tile r-sq"><video src="assets/video/reel-3.mp4" poster="assets/images/reel-poster.svg" loop controls playsinline preload="metadata" aria-label="The first slice"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span><figcaption>The first slice</figcaption></figure>
+
+        <!-- PHOTO TILE: change src and caption -->
+        <figure class="tile r-916"><img src="assets/images/social-4.svg" alt="Behind the counter" loading="lazy"><figcaption>Behind the counter</figcaption></figure>
+
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#fdf6ec" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg>
+</section>
+
+<!-- ============ 6. TESTIMONIALS (fade automatically) ============ -->
+<section id="reviews" class="section reviews">
+  <div class="container intro center">
+    <h2>Kind words</h2>
+    <p>A few notes from the people we bake for.</p>
+  </div>
+  <div class="container slider">
+
+        <!-- REVIEW 1: edit photo, text and name -->
+        <blockquote class="review">
+          <img src="assets/reviews/review-1.svg" alt="Amara O.'s order" loading="lazy">
+          <div>
+            <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+            <p>Our wedding cake looked like a painting and tasted even better. Guests are still asking where it came from.</p>
+            <footer><strong>Amara O.</strong>, Wedding cake client</footer>
+          </div>
+        </blockquote>
+
+        <!-- REVIEW 2: edit photo, text and name -->
+        <blockquote class="review">
+          <img src="assets/reviews/review-2.svg" alt="Daniel K.'s order" loading="lazy">
+          <div>
+            <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+            <p>The almond croissants are the reason I wake up early on Fridays. Flaky, buttery and never too sweet.</p>
+            <footer><strong>Daniel K.</strong>, Weekly regular</footer>
+          </div>
+        </blockquote>
+
+        <!-- REVIEW 3: edit photo, text and name -->
+        <blockquote class="review">
+          <img src="assets/reviews/review-3.svg" alt="Tola B.'s order" loading="lazy">
+          <div>
+            <div class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+            <p>I asked for something peachy and soft. What arrived was perfect, down to the handwritten card.</p>
+            <footer><strong>Tola B.</strong>, Birthday order</footer>
+          </div>
+        </blockquote>
+
+  </div>
+</section>
+
+<!-- ============ 7. ORDER INQUIRY ============ -->
+<section id="order" class="order">
+  <div class="wave-top"><svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#f7e7c6" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg></div>
+  <div class="order-body">
+    <div class="container order-grid">
+      <div class="intro">
+        <h2>Start an order</h2>
+        <p>Tell us about your celebration, or a brand collaboration. We reply within two working days.</p>
+      </div>
+      <!-- Sent to your database by js/db.js. Keep the name="" attributes as they are. -->
+      <form id="inquiry-form" class="form" novalidate>
+        <label>Your name<input name="name" required placeholder="Ada Bello" autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required placeholder="you@example.com" autocomplete="email"></label>
+        <label>What do you need?
+          <select name="type">
+            <option>Custom cake</option><option>Pastry box</option><option>Event catering</option><option>Content collaboration</option>
+          </select>
+        </label>
+        <label>Date needed<input name="needed_by" type="date"></label>
+        <label class="wide">Details<textarea name="message" rows="5" required placeholder="Flavours, servings, colours, inspiration..."></textarea></label>
+        <button type="submit" class="btn btn-dark wide">Send inquiry</button>
+        <p id="form-status" class="form-status wide" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 8. FOOTER ============ -->
+<footer class="footer">
+  <div class="wave-top"><svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#3b2a24" d="M0 55 C200 105 420 5 720 48 S1230 100 1440 38 V100 H0Z"/></svg></div>
+  <!-- Footer background pattern: change the file in assets/patterns -->
+  <div class="footer-pattern" style="background-image:url('assets/patterns/pattern.svg')" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <img src="assets/logo/logo.svg" alt="Crumb &amp; Cream logo" class="footer-logo">
+    <p class="footer-line">Come by for something warm.</p>
+    <p class="footer-sub">Open Tuesday to Sunday, 7am until sold out.</p>
+    <ul class="socials">
+      <!-- Replace each href with your profile link -->
+      <li><a href="https://instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg></a></li>
+      <li><a href="https://tiktok.com/" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2 4.2 5 4.4"/></svg></a></li>
+      <li><a href="https://youtube.com/" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></a></li>
+    </ul>
+    <small>&copy; 2026 Crumb &amp; Cream Bakehouse</small>
+  </div>
+</footer>
+
+<!-- ============ POP-UPS (product details) ============ -->
+
+  <!-- POP-UP 1: opens when the card above is tapped. Keep id="modal-1" matching the card link. -->
+  <div class="modal" id="modal-1" role="dialog" aria-label="Vanilla Bean Layer Cake">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-1.svg" alt="Vanilla Bean Layer Cake">
+      <div class="modal-text">
+        <p class="tag">Best seller</p>
+        <div class="card-title"><h3>Vanilla Bean Layer Cake</h3><span class="price">$58</span></div>
+        <p>Three tender vanilla layers, whipped mascarpone and a crown of fresh berries.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Madagascar vanilla</li><li>Cultured butter</li><li>Mascarpone</li><li>Seasonal berries</li></ul>
+        <p class="small">Serves 8 to 10</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 2: opens when the card above is tapped. Keep id="modal-2" matching the card link. -->
+  <div class="modal" id="modal-2" role="dialog" aria-label="Almond Croissant">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-2.svg" alt="Almond Croissant">
+      <div class="modal-text">
+        <p class="tag">Fri to Sun</p>
+        <div class="card-title"><h3>Almond Croissant</h3><span class="price">$6</span></div>
+        <p>Twice-baked, filled with frangipane and dusted with toasted almond flakes.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Laminated dough</li><li>Almond frangipane</li><li>Flaked almonds</li><li>Orange blossom syrup</li></ul>
+        <p class="small">Single pastry</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 3: opens when the card above is tapped. Keep id="modal-3" matching the card link. -->
+  <div class="modal" id="modal-3" role="dialog" aria-label="Peach Blush Tart">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-3.svg" alt="Peach Blush Tart">
+      <div class="modal-text">
+        <p class="tag">Seasonal</p>
+        <div class="card-title"><h3>Peach Blush Tart</h3><span class="price">$34</span></div>
+        <p>Buttery shortcrust, vanilla custard and glazed peach slices in a petal pattern.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Shortcrust</li><li>Vanilla custard</li><li>Ripe peaches</li><li>Apricot glaze</li></ul>
+        <p class="small">Serves 6</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 4: opens when the card above is tapped. Keep id="modal-4" matching the card link. -->
+  <div class="modal" id="modal-4" role="dialog" aria-label="Brown Butter Cookies">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-4.svg" alt="Brown Butter Cookies">
+      <div class="modal-text">
+        <p class="tag">Box of 4</p>
+        <div class="card-title"><h3>Brown Butter Cookies</h3><span class="price">$14</span></div>
+        <p>Crisp edges, soft centres and a flake of sea salt on each one.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Brown butter</li><li>Dark chocolate</li><li>Muscovado sugar</li><li>Sea salt</li></ul>
+        <p class="small">Box of 4</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 5: opens when the card above is tapped. Keep id="modal-5" matching the card link. -->
+  <div class="modal" id="modal-5" role="dialog" aria-label="Honey Cardamom Buns">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-5.svg" alt="Honey Cardamom Buns">
+      <div class="modal-text">
+        <p class="tag">Daily</p>
+        <div class="card-title"><h3>Honey Cardamom Buns</h3><span class="price">$16</span></div>
+        <p>Soft knotted buns brushed with cardamom honey and pearl sugar.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Whole milk</li><li>Cardamom</li><li>Wildflower honey</li><li>Pearl sugar</li></ul>
+        <p class="small">Box of 4</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- POP-UP 6: opens when the card above is tapped. Keep id="modal-6" matching the card link. -->
+  <div class="modal" id="modal-6" role="dialog" aria-label="Rose Pistachio Cupcakes">
+    <a href="#menu" class="modal-veil" aria-label="Close"></a>
+    <article class="modal-panel">
+      <a href="#menu" class="modal-close" aria-label="Close">&times;</a>
+      <img src="assets/products/product-6.svg" alt="Rose Pistachio Cupcakes">
+      <div class="modal-text">
+        <p class="tag">Gift box</p>
+        <div class="card-title"><h3>Rose Pistachio Cupcakes</h3><span class="price">$24</span></div>
+        <p>Rose-scented sponge, pistachio buttercream and a sugared petal.</p>
+        <h4>Made with</h4>
+        <ul class="chips"><li>Rose water</li><li>Pistachio</li><li>Buttercream</li><li>Sugared petals</li></ul>
+        <p class="small">Box of 6</p>
+        <a href="#order" class="btn btn-dark">Order this bake</a>
+      </div>
+    </article>
+  </div>
+
+<!-- ============ POP-UPS (flyers) ============ -->
+<div class="modal" id="flyer-1" role="dialog" aria-label="Weekend offer flyer">
+  <a href="#offers" class="modal-veil" aria-label="Close"></a>
+  <div class="flyer-view"><a href="#offers" class="modal-close" aria-label="Close">&times;</a><img src="assets/flyers/flyer-1.svg" alt="Weekend offer flyer"></div>
+</div>
+<div class="modal" id="flyer-2" role="dialog" aria-label="Custom cake menu flyer">
+  <a href="#offers" class="modal-veil" aria-label="Close"></a>
+  <div class="flyer-view"><a href="#offers" class="modal-close" aria-label="Close">&times;</a><img src="assets/flyers/flyer-2.svg" alt="Custom cake menu flyer"></div>
+</div>
+
+<!-- JavaScript is only used for the database and API key -->
+<script src="js/config.js"></script>
+<script src="js/db.js"></script>
+</body>
+</html>
