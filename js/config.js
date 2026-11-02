@@ -4,7 +4,7 @@
    Use the PUBLISHABLE (anon) key only. Never put a secret/service key here.
 ---------------------------------------------------------------- */
 window.SITE_CONFIG = {
-  SUPABASE_URL: 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE',   // e.g. https://abcd1234.supabase.co
-  SUPABASE_KEY: 'PASTE_YOUR_PUBLISHABLE_ANON_KEY_HERE',
+ NEXT_PUBLIC_SUPABASE_URL=https://vqyyhzjwrjyfidqspftb.supabase.co
+ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_e08VQGAP_ErOMPTHakYeiw_GbDAX9bP
   TABLE: 'inquiries',                                     // table created by supabase.sql
 };
