@@ -36,7 +36,7 @@ drop policy if exists "owner can delete inquiries" on inquiries;
 
 create policy "owner can read inquiries" on inquiries
   for select to authenticated
-  using ((auth.jwt() ->> 'email') = 'YOUR_ADMIN_EMAIL@example.com');
+  using ((auth.jwt() ->> 'email') = 'oceanmediaglobal@gmail.com');
 
 create policy "owner can update inquiries" on inquiries
   for update to authenticated
@@ -45,4 +45,4 @@ create policy "owner can update inquiries" on inquiries
 
 create policy "owner can delete inquiries" on inquiries
   for delete to authenticated
-  using ((auth.jwt() ->> 'email') = 'oceanmediaglobal@example.com');
+  using ((auth.jwt() ->> 'email') = 'oceanmediaglobal@gmail.com');
